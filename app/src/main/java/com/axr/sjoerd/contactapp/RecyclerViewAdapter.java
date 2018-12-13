@@ -48,7 +48,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Glide.with(context).asBitmap().load(personArrayList.get(i).getProfileThumbnail()).into(viewHolder.circleImageView);
         Log.d("Going out", "after bit");
 
-        viewHolder.textView.setText(personArrayList.get(i).getFirstName() + " " + personArrayList.get(i).getLastName());
+        viewHolder.textView.setText( i + " " + personArrayList.get(i).getFirstName() + " " + personArrayList.get(i).getLastName());
+
+        viewHolder.textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                com.axr.sjoerd.contactcard.DomainLayer.Person p = personArrayList.get(i);
+                Toast.makeText(context, p.getFirstName(), Toast.LENGTH_LONG).show();
+            }
+        });
 
         viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -32,7 +32,7 @@ public class RandomPersonApi {
     public ArrayList<Person> jsonObject() {
         final ArrayList<Person> personCollection = new ArrayList<Person>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             String json = getJSON();
 
             try {
